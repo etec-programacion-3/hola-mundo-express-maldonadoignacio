@@ -3,7 +3,12 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello Maldonado');
+});
+
+app.get("/saludo/:nombre", (req, res) => {
+  const nombre= req.params.nombre
+  res.send(`hola ${nombre}`)
 });
 
 app.listen(3000, () => {
